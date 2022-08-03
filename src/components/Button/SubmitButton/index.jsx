@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 function submitButton(props) {
   return (
-    <button className="sbmtButton" onClick={props.sbmtValue}>
+    <button className="submitButton" onClick={props.submitValue}>
       Submit
     </button>
   );

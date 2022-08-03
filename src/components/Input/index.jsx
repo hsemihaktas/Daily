@@ -9,7 +9,7 @@ function input(props) {
         placeholder={props.placeholder}
         id={props.id}
         onChange={props.onchange}
-        className={classnames('inpt', {
+        className={classnames('input', {
           dangerInpt: props.error,
         })}
       ></input>

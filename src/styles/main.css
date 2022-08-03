@@ -1,7 +1,7 @@
 body{
     background-color: hsl(0, 0%, 36%);
 }
-.form {
+.form{
     width: 100%;
     height: 100%;
     margin-top: 200px;
@@ -14,7 +14,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-.addBtn {
+.addButton{
     border: 1px solid black;
     color: black;
     border-radius: 50px;
@@ -28,12 +28,12 @@ body{
     font-weight: bolder;
 }
 
-.addBtn:hover {
+.addButton:hover{
     background-color: black;
     color: white;
 }
 
-.dltBtn {
+.deleteButton{
     background-color: red;
     border: none;
     color: white;
@@ -47,12 +47,12 @@ body{
     cursor: pointer;
 }
 
-.dltBtn:hover {
+.deleteButton:hover{
     background-color: black;
     color: white;
 }
 
-.sbmtButton {
+.submitButton{
     border: 2px solid black;
     color: black;
     border-radius: 50px;
@@ -66,12 +66,12 @@ body{
     font-weight: bolder;
 }
 
-.sbmtButton:hover {
+.submitButton:hover{
     background-color: black;
     color: white;
 }
 
-.inpt {
+.input{
     width: 500px;
     height: 45px;
     margin: 10px;
@@ -81,7 +81,7 @@ body{
     border: 1px solid black;
 }
 
-.dangerInpt {
+.dangerInput{
     width: 500px;
     height: 45px;
     margin: 10px;
@@ -96,14 +96,14 @@ body{
     font-weight: bold;
 }
 
-.lbl {
+.label{
     text-transform: uppercase;
     font-size: 24px;
     font-weight: bold;
     color: white;
 }
 
-.right {
+.right{
     float: right;
     margin: 10px;
 }

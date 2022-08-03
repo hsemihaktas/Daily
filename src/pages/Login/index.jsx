@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
-import '../../styles/main.css';
-
 import Inpt from '../../components/Input';
 import Labl from '../../components/Label';
 import SubmitButton from '../../components/Button/SubmitButton';
+
+import '../../styles/main.css';
+
 import data from '../../data.json';
 
 export default class index extends Component {
@@ -37,16 +38,15 @@ export default class index extends Component {
   }
 
   submitValue() {
-    const isEmailValid = this.maybeValidEmail(this.state.email);
-    const isPasswordValid = this.maybeValidPassword(this.state.password);
+    const { email, password } = this.state;
+    const isEmailValid = this.maybeValidEmail(email);
+    const isPasswordValid = this.maybeValidPassword(password);
 
-    if (!isEmailValid || !isPasswordValid || !this.state.email || !this.state.password) {
+    if (!isEmailValid || !isPasswordValid || !email || !password) {
       return this.setState({
-        emailError:
-          (!this.state.email && 'Email alanı boş geçilemez') || (!isEmailValid && 'Geçerli bir email adresi giriniz'),
+        emailError: (!email && 'Email alanı boş geçilemez') || (!isEmailValid && 'Geçerli bir email adresi giriniz'),
         passwordError:
-          (!this.state.password && 'Password alanı boş geçilemez') ||
-          (!isPasswordValid && 'Şifreniz en az 8 karakter olmalıdır'),
+          (!password && 'Password alanı boş geçilemez') || (!isPasswordValid && 'Şifreniz en az 8 karakter olmalıdır'),
       });
     }
 
@@ -100,7 +100,7 @@ export default class index extends Component {
           onchange={this.onChange.bind(this)}
           error={this.state.passwordError}
         />
-        <SubmitButton sbmtValue={this.submitValue} />
+        <SubmitButton submitValue={this.submitValue} />
         <br></br>
       </div>
     );

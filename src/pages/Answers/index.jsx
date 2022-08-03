@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import data from '../../data.json';
-import '../../styles/main.css';
-import Labl from '../../components/Label';
-import Inpt from '../../components/Input';
+
+import Label from '../../components/Label';
+import Input from '../../components/Input';
 import SubmitButton from '../../components/Button/SubmitButton';
+
+import '../../styles/main.css';
+
+import data from '../../data.json';
 
 class index extends Component {
   constructor(props) {
@@ -15,13 +18,11 @@ class index extends Component {
   }
 
   onChange = (event) => {
-    const value = event.target.value;
-    const id = Number(event.target.id);
-    const sorular = [...this.state.questions];
+    const { id, value } = event.target;
     const error = [...this.state.error];
 
-    const questions = sorular.map((question) => {
-      if (question.id === id) {
+    const clonedQuestions = this.state.questions.map((question) => {
+      if (question.id === Number(id)) {
         question.answer = value;
         const errorIndex = error.indexOf(question.id);
         if (errorIndex > -1) {
@@ -30,7 +31,7 @@ class index extends Component {
       }
       return question;
     });
-    this.setState({ questions, error });
+    this.setState({ questions: clonedQuestions, error });
   };
 
   submitValue = () => {
@@ -58,18 +59,18 @@ class index extends Component {
         <ul>
           {this.state.questions.map((data) => (
             <div key={data.id}>
-              <Labl id={data.id} text={data.question}></Labl>
-              <Inpt
+              <Label id={data.id} text={data.question}></Label>
+              <Input
                 type="text"
                 placeholder={data.id + '. Sorunun Cevabı'}
                 id={data.id}
                 onchange={this.onChange.bind(this)}
                 error={this.state.error.includes(data.id) && 'Cevap boş geçilemez'}
-              ></Inpt>
+              ></Input>
             </div>
           ))}
         </ul>
-        <SubmitButton sbmtValue={this.submitValue} />
+        <SubmitButton submitValue={this.submitValue} />
         <br></br>
       </div>
     );

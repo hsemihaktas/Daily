@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 function addButton(props) {
   return (
-    <button className="addBtn" onClick={props.addvalue}>
+    <button className="addButton" onClick={props.addvalue}>
       +
     </button>
   );

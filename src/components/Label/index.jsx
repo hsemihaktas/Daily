@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 function label(props) {
   return (
     <div>
-      <label className="lbl" id={props.id}>
+      <label className="label" id={props.id}>
         {props.text}
       </label>
     </div>

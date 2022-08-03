@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import data from '../../data.json';
-import '../../styles/main.css';
+
 import Inpt from '../../components/Input';
 import SubmitButton from '../../components/Button/SubmitButton';
 import DeleteButton from '../../components/Button/DeleteButton';
 import AddButton from '../../components/Button/AddButton';
+
+import '../../styles/main.css';
+
+import data from '../../data.json';
 
 class index extends Component {
   constructor(props) {
@@ -18,14 +21,13 @@ class index extends Component {
   onChange = (event) => {
     const value = event.target.value;
     const id = Number(event.target.id);
-    const sorular = [...this.state.questions];
-    const questions = sorular.map((question) => {
+    const clonedQuestions = this.state.questions.map((question) => {
       if (question.id === id) {
         question.question = value;
       }
       return question;
     });
-    this.setState({ questions });
+    this.setState({ questions: clonedQuestions });
   };
 
   addValue() {
@@ -61,7 +63,7 @@ class index extends Component {
               <DeleteButton id={data.id} deletevalue={this.deleteValue} />
             </div>
           ))}
-          <SubmitButton sbmtValue={this.submitValue} />
+          <SubmitButton submitValue={this.submitValue} />
         </ul>
         <br></br>
       </div>
